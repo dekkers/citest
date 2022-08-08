@@ -50,6 +50,7 @@ jobs:
           # https://github.com/docker/cli/issues/2827
           context: .
           push: true
-          tags: ${{ steps.prep.outputs.tagged_image }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
